@@ -15,7 +15,7 @@ players = plyr.setup(plyr_options);
 
 players[0].on('ended', function(event) {
     players[0].restart();
-    // players[0].play(); // infinite loop
+    players[0].play(); // infinite loop
 });
 });
 </script>
