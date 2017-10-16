@@ -6,7 +6,17 @@
 <link rel="stylesheet" href="https://cdn.plyr.io/2.0.16/plyr.css">
 <script>
 $( document ).ready(function() {
-plyr.setup();
+
+var plyr_options = {
+        autoplay: true
+    };
+
+players = plyr.setup(plyr_options);
+
+players[0].on('ended', function(event) {
+    players[0].restart();
+    // players[0].play(); // infinite loop
+});
 });
 </script>
 </head>
